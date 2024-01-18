@@ -1,0 +1,31 @@
+.coluna {
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+}
+
+.bgRed{
+  background-color: red;
+}
+
+.bgOrange{
+  background-color: orangered;
+}
+
+.bgGreen{
+  background-color: rgb(47, 192, 47);
+}
+
+.column-name{
+  color: white;
+}
+
+.header {
+  background-color: rgba(162, 39, 39, 0.511);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
