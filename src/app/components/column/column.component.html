@@ -7,4 +7,31 @@
   <div class="header">
     <h2 class="column-name">{{ name }}</h2>
   </div>
+
+  <!-- Progress: Fazer -->
+  <div *ngIf="name === ' Fazer '">
+    <div *ngFor="let task of tasks">
+      <div *ngIf="task.progress === 'fazer'">
+        <app-task [task]="task"></app-task>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress: Fazendo -->
+  <div *ngIf="name === ' Fazendo '">
+    <div *ngFor="let task of tasks">
+      <div *ngIf="task.progress === 'fazendo'">
+        <app-task [task]="task"></app-task>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress: Feito -->
+  <div *ngIf="name === ' Feito '">
+    <div *ngFor="let task of tasks">
+      <div *ngIf="task.progress === 'feito'">
+        <app-task [task]="task"></app-task>
+      </div>
+    </div>
+  </div>
 </div>
