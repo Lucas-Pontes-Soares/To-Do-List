@@ -1,0 +1,71 @@
+<div class="center">
+  <h1>Criar Task</h1>
+  <p>Crie aqui suas tarefas!</p>
+  <br>
+  <button class="btnCancelar" (click)="navigateToGetTask()"> X | Cancelar</button>
+
+  <div class="divForm">
+    <form #formsCreateTask="ngForm" (ngSubmit)="createTask(formsCreateTask)">
+      <h3>Criando nova tarefa:</h3>
+
+      <div class="informacoes">
+        <label for="title">Titulo: </label> <br>
+        <input
+          type="text"
+          name="title"
+          placeholder="Informe o titulo aqui"
+          required
+          minlength="2"
+          [(ngModel)]="title">
+        <br>
+      </div>
+
+      <div class="informacoes">
+        <label for="description">Descrição: </label> <br>
+        <input
+          type="text"
+          name="description"
+          placeholder="Informe a descrição aqui"
+          required
+          minlength="2"
+          [(ngModel)]="description">
+        <br>
+      </div>
+
+      <div class="informacoes">
+        <label for="progress">Progresso:</label> <br>
+        <select
+          id="progress"
+          name="progress"
+          [(ngModel)]="progress">
+          <option value='fazer'>Fazer</option>
+          <option value='fazendo'>Fazendo</option>
+          <option value='feito'>Feito</option>
+        </select>
+        <br>
+      </div>
+
+      <div class="informacoes">
+        <label for="priority">Defina a prioridade:</label> <br>
+        <input
+          type="radio"
+          id="priorityTrue"
+          name="priority"
+          value="Com Prioridade"
+          required
+          [(ngModel)]="priority" />
+        <label for="priorityTrue">Com Prioridade</label> <br/>
+        <input
+          type="radio"
+          id="priorityFalse"
+          name="priority"
+          value="Sem Prioridade"
+          required
+          [(ngModel)]="priority" />
+        <label for="priorityFalse">Sem Prioridade</label>
+      </div>
+
+      <button type="submit">Criar Tarefa</button>
+    </form>
+  </div>
+</div>

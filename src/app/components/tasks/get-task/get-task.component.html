@@ -1,0 +1,20 @@
+<div>
+  <div class="center">
+    <h1>To-do List</h1>
+    <p>Organize aqui suas tarefas!</p>
+    <br>
+    <button class="btnNew" (click)="navigateToCreateTask()">+ | Nova Tarefa</button>
+  </div>
+  <div class="container">
+    <app-column
+      [name]="' Fazer '" [color]="'red'">
+    </app-column>
+    <app-column
+      [name]="' Fazendo '" [color]="'orange'">
+    </app-column>
+    <app-column
+      [name]="' Feito '" [color]="'green'">
+    </app-column>
+
+  </div>
+</div>

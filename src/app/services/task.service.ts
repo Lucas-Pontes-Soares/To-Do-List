@@ -44,6 +44,7 @@ export class TaskService {
     this.tasks.push(item);
     this.updateLocalStorage()
     console.log('adicionado');
+    return 'Tarefa criada com sucesso'
   }
 
   updateLocalStorage(){
