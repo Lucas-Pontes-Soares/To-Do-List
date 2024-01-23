@@ -1,4 +1,33 @@
-<div>
-  <h3>{{ task.title }}</h3>
-  <small>{{ task.description }}</small>
+<div class="divTask">
+  <div class="rightColumn">
+    <h3>{{ task.title }}</h3>
+    <small>{{ task.description }}</small>
+  </div>
+  <div class="leftColumn">
+    <small *ngIf="task.priority === true">Com prioridade</small>
+    <div class="divIcons">
+      <img
+        class="imgIcons"
+        src="../../../../assets/images/deleteIcon.png"
+        alt="Botao de excluir"
+        (click)="deleteTask()"
+      >
+      <img
+        class="imgIcons"
+        src="../../../../assets/images/editIcon.png"
+        alt="Botao de Editar"
+        (click)="editTask()"
+      >
+    </div>
+  </div>
+  <div class="divProgress">
+    <img
+      class="imgIcons"
+      src="../../../../assets/images/right-arrow.png"
+      alt="Flecha para a direita"
+      (click)="changeProgress()"
+    >
+  </div>
+
+
 </div>

@@ -51,4 +51,33 @@ export class TaskService {
     localStorage.setItem('tasks', JSON.stringify(this.tasks))
   }
 
+  updateTaskProgress(task: Task){
+    if(task.progress === 'fazer'){
+      task.progress = 'fazendo';
+    } else if(task.progress === 'fazendo'){
+      task.progress = 'feito';
+    }
+
+    const taskEdited: Task = {
+      id: task.id,
+      title: task.title,
+      dateToComplete: task.dateToComplete,
+      description: task.description,
+      priority: task.priority,
+      progress: task.progress
+    }
+
+    const id = task.id;
+    this.tasks.splice(Number(id)-1, 1, taskEdited)
+    this.updateLocalStorage()
+    console.log('alterado');
+  }
+
+  deleteTask(id: number){
+    const index = this.tasks.findIndex((item) => item.id === id);
+    this.tasks.splice(index, 1)
+    this.updateLocalStorage()
+    console.log('excluido');
+  }
+
 }

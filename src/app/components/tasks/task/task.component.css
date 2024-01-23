@@ -1,0 +1,48 @@
+.divTask{
+  background-color: white;
+  width: 80%;
+  min-height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.rightColumn {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+  width: 50%;
+}
+
+.leftColumn {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  text-align: center;
+  width: 40%;
+}
+
+.divIcons{
+  margin-top: 50%;
+}
+
+.divProgress {
+  background-color: gray;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgIcons {
+  cursor: pointer;
+  padding-left: 10%;
+}
+
