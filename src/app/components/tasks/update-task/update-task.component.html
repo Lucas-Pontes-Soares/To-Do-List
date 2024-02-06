@@ -1,0 +1,73 @@
+<div class="center">
+  <h1>Atualizar Task</h1>
+  <p>Atualize aqui sua tarefa!</p>
+  <br>
+  <button class="btnCancelar" (click)="navigateToGetTask()"> X | Cancelar</button>
+
+  <div class="divForm">
+    <form #formsUpdateTask="ngForm" (ngSubmit)="updateTask(formsUpdateTask)">
+      <h3>Atualizando tarefa:</h3>
+
+      <div class="informacoes">
+        <label for="title">Titulo: </label> <br>
+        <input
+          type="text"
+          name="title"
+          placeholder="Informe o titulo aqui"
+          required
+          minlength="2"
+          maxlength="20"
+          [(ngModel)]="title">
+        <br>
+      </div>
+
+      <div class="informacoes">
+        <label for="description">Descrição: </label> <br>
+        <input
+          type="text"
+          name="description"
+          placeholder="Informe a descrição aqui"
+          required
+          minlength="2"
+          maxlength="50"
+          [(ngModel)]="description">
+        <br>
+      </div>
+
+      <div class="informacoes">
+        <label for="progress">Progresso:</label> <br>
+        <select
+          id="progress"
+          name="progress"
+          [(ngModel)]="progress">
+          <option value='fazer'>Fazer</option>
+          <option value='fazendo'>Fazendo</option>
+          <option value='feito'>Feito</option>
+        </select>
+        <br>
+      </div>
+
+      <div class="informacoes">
+        <label for="priority">Defina a prioridade:</label> <br>
+        <input
+          type="radio"
+          id="priorityTrue"
+          name="priority"
+          value="Com Prioridade"
+          required
+          [(ngModel)]="priority" />
+        <label for="priorityTrue">Com Prioridade</label> <br/>
+        <input
+          type="radio"
+          id="priorityFalse"
+          name="priority"
+          value="Sem Prioridade"
+          required
+          [(ngModel)]="priority" />
+        <label for="priorityFalse">Sem Prioridade</label>
+      </div>
+
+      <button type="submit">Atualizar Tarefa</button>
+    </form>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { TaskComponent } from './components/tasks/task/task.component';
 import { CreateTaskComponent } from './components/tasks/create-task/create-task.component';
 import { GetTaskComponent } from './components/tasks/get-task/get-task.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateTaskComponent } from './components/tasks/update-task/update-task.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     ColumnComponent,
     TaskComponent,
     CreateTaskComponent,
-    GetTaskComponent
+    GetTaskComponent,
+    UpdateTaskComponent
   ],
   imports: [
     BrowserModule,

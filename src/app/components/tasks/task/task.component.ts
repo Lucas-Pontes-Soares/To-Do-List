@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Task } from 'src/app/interfaces/task';
 import { TaskService } from 'src/app/services/task.service';
 
@@ -10,7 +11,7 @@ import { TaskService } from 'src/app/services/task.service';
 export class TaskComponent implements OnInit {
   @Input() task! : Task;
 
-  constructor(private TaskService: TaskService ) { }
+  constructor(private TaskService: TaskService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,6 @@ export class TaskComponent implements OnInit {
   }
 
   editTask(){
-
+    this.router.navigate([`/updateTask/${this.task.id}`]);
   }
 }

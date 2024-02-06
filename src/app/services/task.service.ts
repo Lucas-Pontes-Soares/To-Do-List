@@ -16,6 +16,10 @@ export class TaskService {
     return this.tasks;
   }
 
+  getTasksById(taskId: number){
+    return this.tasks.find(x => x.id === taskId);
+  }
+
   criarTask(
       title: string,
       progress: 'fazer' | 'fazendo' | 'feito',
@@ -71,6 +75,27 @@ export class TaskService {
     this.tasks.splice(Number(id)-1, 1, taskEdited)
     this.updateLocalStorage()
     console.log('alterado');
+  }
+
+  updateTask(
+    id: number,
+    title: string,
+    progress: 'fazer' | 'fazendo' | 'feito',
+    description: string,
+    priority: boolean){
+    const task: Task = {
+      id: id,
+      title: title,
+      dateToComplete: new Date().toLocaleString('pt-BR'),
+      description: description,
+      priority: priority,
+      progress: progress
+    }
+
+    this.tasks.splice(Number(id)-1, 1, task)
+    this.updateLocalStorage()
+    console.log('alterado');
+    return 'Tarefa atualizada com sucesso'
   }
 
   deleteTask(id: number){
